@@ -10,25 +10,54 @@
 // Sexy Placeholder Shim. Making IE8 sexy since 2013.
 // Author: Tyler Mauthe
 (function($){
+
+  var defaultEventHandler = function(selector, sexyPlaceholderClass) {
+    $('body').delegate(selector, 'keydown keypress keyup change paste', function(){
+      var $this = $(this);
+      var thisPlaceholder = $this.data(sexyPlaceholderClass);
+      
+      if(thisPlaceholder) {
+        if($this.val()!=='') {
+          if(typeof thisPlaceholder.hide === 'function') {
+            thisPlaceholder.hide();
+          }
+        }
+        else {
+          if(typeof thisPlaceholder.show === 'function') {
+            thisPlaceholder.show();
+          }
+        }
+      }
+    });
+  };
+
+
   $.extend($.fn, { 
     sexyPlaceholder: function(options){
       if(!Modernizr.placeholder){      
         var defaults = {
+          sexyPlaceholderClass: 'jq-sexy-placeholder',
           class: 'placeholder',
           css: {
             position: 'absolute'
-          }
+          },
+          eventHandler: defaultEventHandler
         };
         options = $.extend({}, defaults, options);
 
-        return this.each(function() {
+        options.eventHandler(this.selector, options.sexyPlaceholderClass);
+
+        var self = this;
+
+        return self.each(function() {
           var $input = $(this);
           var placeholderText = $input.attr('placeholder');
 
-          var $overlay = $('<span class="jq-sexy-placeholder">' + placeholderText + '</span>');
+          var $overlay = $('<span class="' + options.sexyPlaceholderClass + '">' + placeholderText + '</span>');
           $overlay.addClass(options.class)
                   .css(options.css);
           $input.before($overlay);
+          $input.data(options.sexyPlaceholderClass,$overlay);
         });
       }
     }

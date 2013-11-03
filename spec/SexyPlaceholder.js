@@ -4,38 +4,53 @@ if(!Object.keys){var hasDontEnumBug=!0,dontEnums=["toString","toLocaleString","v
 
 var testInputSelector             = "#tester";
 var sexyPlaceholderClassSelector  = ".jq-sexy-placeholder";
+describe("jQuery Sexy Placeholder Test Suite.", function(){
 
-describe("Placeholder", function() {
-  it("should be available on jQuery selections", function() {
-    expect(jQuery('body').sexyPlaceholder).toBeDefined();
+  afterEach(function(){
+    jQuery(sexyPlaceholderClassSelector).remove();
   });
-});
+  describe("Placeholder function", function() {
+    it("should be available on jQuery selections", function() {
+      expect(jQuery('body').sexyPlaceholder).toBeDefined();
+    });
+  });
 
-describe("The placeholder shim", function(){
-  beforeEach(function(){
-    jQuery(testInputSelector).sexyPlaceholder();
+  describe("The placeholder shim", function(){
+    beforeEach(function(){
+      jQuery(testInputSelector).sexyPlaceholder();
+    });
+    if(Modernizr.placeholder) {
+      it("should do nothing, because you have a good browser", function(){
+        expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(0);
+      });
+    }
+    else {
+      it("should make you think you have a browser that doesn't suck", function(){
+        expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(1);
+      });
+    }
   });
-  if(Modernizr.placeholder) {
-    it("should do nothing, because you have a good browser", function(){
-      expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(0);
+
+  if(!Modernizr.placeholder){
+    describe("Your browser sucks. Sexy Placeholder", function(){  
+      it("should allow reasonable defaults to be overridden",function(){
+        var className = 'notPlaceholder';
+        var cssDefinition = {'position': 'fixed'};
+        var cssAttributes = Object.keys(cssDefinition);
+        jQuery(testInputSelector).sexyPlaceholder({class: className, css: cssDefinition});
+        expect(jQuery(sexyPlaceholderClassSelector).hasClass(className)).toBe(true);
+        expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
+      });
+      it("should disappear when input has value", function(){
+        jQuery(testInputSelector).trigger('change');
+        expect(jQuery(sexyPlaceholderClassSelector).is(':visible')).toBe(false);
+      });
     });
   }
-  else {
-    it("should make you think you have a browser that doesn't suck", function(){
-      expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(1);
-    });
-  }
 });
-
-if(!Modernizr.placeholder){
-  describe("Your browser sucks, tests continuing...", function(){  
-    it("should allow reasonable defaults",function(){
-      var className = 'notPlaceholder';
-      var cssDefinition = {'position': 'fixed'};
-      var cssAttributes = Object.keys(cssDefinition);
-      jQuery(testInputSelector).sexyPlaceholder({class: className, css: cssDefinition});
-      expect(jQuery(sexyPlaceholderClassSelector).hasClass(className)).toBe(true);
-      expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
-    });
-  });
-}
+//For development / debugging / hax0ring / etc
+// describe("DEBUGGING / DEVELOPMENT", function() {
+//   it("makes the placeholder appear and stick around", function() {
+//     expect(jQuery(testInputSelector).sexyPlaceholder()).toBeDefined();
+//   });
+// });
