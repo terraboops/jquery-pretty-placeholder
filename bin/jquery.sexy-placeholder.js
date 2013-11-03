@@ -85,8 +85,7 @@
               'left': '4px',
               'fontSize': '13px',
               'wordSpacing': '-1px',
-              'color': '#A9A9A9',
-              'pointerEvents': 'none'
+              'color': '#A9A9A9'
         }
       });
     }
