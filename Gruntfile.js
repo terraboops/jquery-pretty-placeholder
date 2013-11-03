@@ -1,13 +1,56 @@
 module.exports = function (grunt) {
     var browsers = [{
         browserName: "internet explorer",
+        version: "7",
+        platform: "XP"
+    },
+    {
+        browserName: "internet explorer",
         version: "8",
         platform: "WIN7"
     },
     {
         browserName: "internet explorer",
+        version: "8",
+        platform: "XP"
+    },
+    {
+        browserName: "internet explorer",
+        platform: "VISTA",
+        version: "9"
+    },
+    {
+        browserName: "internet explorer",
         version: "9",
         platform: "WIN7"
+    },
+    {
+        browserName: "firefox",
+        version: "3",
+        platform: "XP"
+    },
+    {
+        browserName: "firefox",
+        version: "4",
+        platform: "XP"
+    },
+    {
+        browserName: "firefox",
+        version: "5",
+        platform: "XP"
+    },
+    {
+        browserName: "chrome",
+        platform: "XP"
+    },
+    {
+        browserName: "chrome",
+        platform: "linux"
+    },
+    {
+        browserName: "internet explorer",
+        platform: "WIN8",
+        version: "10"
     }];
     grunt.initConfig({
 
@@ -23,11 +66,10 @@ module.exports = function (grunt) {
     'saucelabs-jasmine': {
         all: {
             options: {
-                urls: ["http://127.0.0.1:9999/test/SpecRunner.html"],
-                'public': 'public', 
+                urls: ["http://127.0.0.1:9999/test/SpecRunner.html"], 
                 tunnelTimeout: 5,
                 build: process.env.TRAVIS_JOB_ID,
-                concurrency: 2,
+                concurrency: 3,
                 browsers: browsers,
                 testname: "jQuery Sexy Placeholder",
                 tags: ["master"]
@@ -68,5 +110,5 @@ grunt.loadNpmTasks('grunt-contrib-clean');
 // register at least this one task
 grunt.registerTask('default', [ 'clean', 'jshint', 'uglify', 'copy' ]);
 grunt.registerTask('dev', ['connect', 'watch']);
-grunt.registerTask("test", ["connect", "saucelabs-jasmine"]);
+grunt.registerTask("test", ["connect", 'jshint', "saucelabs-jasmine"]);
 };

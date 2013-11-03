@@ -54,12 +54,11 @@ describe("Test Suite:", function(){
               'left': '4px',
               'fontSize': '13px',
               'wordSpacing': '-1px',
-              'color': '#a9a9a9',
-              'pointerEvents': 'none'
+              'color': '#a9a9a9'
         };
-        var cssAttributes = ['position','top','left','fontSize','wordSpacing','color','pointerEvents'];
+        var cssAttributes = ['position','top','left','fontSize','wordSpacing','color'];
         jQuery(testInputSelector).sexyPlaceholderDefaults();
-        expect(JSON.stringify(jQuery(sexyPlaceholderClassSelector).css(cssAttributes))).toBe(JSON.stringify(cssDefinition));
+        expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
       });
 
       it("should allow reasonable defaults to be overridden",function(){
@@ -68,7 +67,7 @@ describe("Test Suite:", function(){
         var cssAttributes = ['position'];
         jQuery(testInputSelector).sexyPlaceholder({'class': className, 'css': cssDefinition});
         expect(jQuery(sexyPlaceholderClassSelector).hasClass(className)).toBe(true);
-        expect(JSON.stringify(jQuery(sexyPlaceholderClassSelector).css(cssAttributes))).toBe(JSON.stringify(cssDefinition));
+        expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
       });
 
       it("should disappear when input has value", function(){
