@@ -1,13 +1,13 @@
-jquery-sexy-placeholder
+Sexy HTML5 Placeholder Shim
 =======================
 
-A sexier placeholder shim. Dress it up however you like.
+A sexier HTML5 placeholder shim. Dress it up however you like.
 
 [![Build Status](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder.png?branch=master)](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder)
 [![Selenium Test Status](https://saucelabs.com/buildstatus/sexyplaceholder)](https://saucelabs.com/u/sexyplaceholder)
 
 ## Support
-This plugin is tested with IE8 and IE9 on Windows 7. Might work with other browsers... If you find that it happens to work for your browser/platform, drop me a line an I'll add it to the list.
+This plugin is tested with IE8 and IE9 on Windows 7. Might work with other browsers...
 
 ## Motivation
 Other placeholder shims exist and they're very nice in their own way, but this plugin is unassuming and totally stylable. While some other plugins utilize an approach that sets the value in the input element to simulate a placeholder, this plugin uses a simple span element for greater stylability. `jquery-sexy-placeholder` makes no assumptions, it is totally submissive. If you can't seem to make up your mind about what you want from this plugin, then you lay back, relax, and let the plugin do all the work by using a predefined default method - more on this below.
