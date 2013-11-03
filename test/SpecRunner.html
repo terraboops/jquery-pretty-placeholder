@@ -43,9 +43,23 @@
 
     })();
   </script>
-
+<style type="text/css">
+  /* Default WebKit Styles - http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css */
+  .placeholder {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 80%;
+    word-spacing: -1px;
+    color: #A9A9A9;
+    pointer-events: none !important;
+  }
+</style>
 </head>
 <body>
-  <input id="tester" placeholder="Sexy Text" />
+  <input type="text" placeholder="Sexy Text1" />
+  <input type="text" placeholder="Sexy Text2" />
+  <input type="text" placeholder="Sexy Text3" />
+  <input type="text" placeholder="Sexy Text4" />
 </body>
 </html>

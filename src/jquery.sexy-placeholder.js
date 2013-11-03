@@ -31,35 +31,64 @@
     });
   };
 
+  var defaultWrapInputForPlacholding = function($input, sexyPlaceholderWrapperClass){
+    if(!$input.parent().hasClass(sexyPlaceholderWrapperClass)) {
+      $input.wrap('<span class="' + sexyPlaceholderWrapperClass + '" style="position:relative"></span>');
+    }
+  };
+
+  var defaultSetPlaceholderWidth = function($placeholder, $input) {
+    $placeholder.width($input.width());
+  };
 
   $.extend($.fn, { 
     sexyPlaceholder: function(options){
       if(!Modernizr.placeholder){      
         var defaults = {
           sexyPlaceholderClass: 'jq-sexy-placeholder',
+          sexyPlaceholderWrapperClass: 'jq-sexy-placeholder-wrapper',
           class: 'placeholder',
-          css: {
-            position: 'absolute'
-          },
-          eventHandler: defaultEventHandler
+          css: {},
+          eventHandler: defaultEventHandler,
+          wrapInputForPlaceholding: defaultWrapInputForPlacholding,
+          setPlaceholderWidth: defaultSetPlaceholderWidth
         };
         options = $.extend({}, defaults, options);
 
         options.eventHandler(this.selector, options.sexyPlaceholderClass);
 
-        var self = this;
-
-        return self.each(function() {
+        return this.each(function() {
           var $input = $(this);
           var placeholderText = $input.attr('placeholder');
 
           var $overlay = $('<span class="' + options.sexyPlaceholderClass + '">' + placeholderText + '</span>');
           $overlay.addClass(options.class)
                   .css(options.css);
+          options.setPlaceholderWidth($overlay, $input);
+          options.wrapInputForPlaceholding($input, options.sexyPlaceholderWrapperClass);
           $input.before($overlay);
           $input.data(options.sexyPlaceholderClass,$overlay);
+          $overlay.on('click',function(){
+            $input.focus();
+          });
         });
       }
+      else {
+        return false;
+      }
+    },
+    sexyPlaceholderDefaults: function(){
+      return this.sexyPlaceholder({
+        css: {
+              'position': 'absolute',
+              'top': '2px',
+              'left': '4px',
+              'fontSize': '13px',
+              'wordSpacing': '-1px',
+              'color': '#A9A9A9',
+              'pointerEvents': 'none'
+        }
+      });
     }
   });
 })(jQuery);
