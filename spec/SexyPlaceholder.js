@@ -83,8 +83,8 @@ describe("Test Suite:", function(){
   }
 });
 // For development / debugging / hax0ring / etc
-describe("DEBUGGING / DEVELOPMENT", function() {
-  it("triggers placeholder without cleanup", function() {
-    expect(jQuery(testInputSelector).sexyPlaceholder()).toBeDefined();
-  });
-});
+// describe("DEBUGGING / DEVELOPMENT", function() {
+//   it("triggers placeholder without cleanup", function() {
+//     expect(jQuery(testInputSelector).sexyPlaceholder()).toBeDefined();
+//   });
+// });
