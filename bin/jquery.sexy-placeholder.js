@@ -33,7 +33,7 @@
 
   var defaultWrapInputForPlacholding = function($input, sexyPlaceholderWrapperClass){
     if(!$input.parent().hasClass(sexyPlaceholderWrapperClass)) {
-      $input.wrap('<span class="' + sexyPlaceholderWrapperClass + '" style="position:relative"></span>');
+      $input.wrap('<span class="' + sexyPlaceholderWrapperClass + '" style="display:inline-block; position:relative"></span>');
     }
   };
 
@@ -42,16 +42,16 @@
   };
 
   $.extend($.fn, { 
-    sexyPlaceholder: function(options){
+    'sexyPlaceholder': function(options){
       if(!Modernizr.placeholder){      
         var defaults = {
-          sexyPlaceholderClass: 'jq-sexy-placeholder',
-          sexyPlaceholderWrapperClass: 'jq-sexy-placeholder-wrapper',
-          class: 'placeholder',
-          css: {},
-          eventHandler: defaultEventHandler,
-          wrapInputForPlaceholding: defaultWrapInputForPlacholding,
-          setPlaceholderWidth: defaultSetPlaceholderWidth
+          'sexyPlaceholderClass': 'jq-sexy-placeholder',
+          'sexyPlaceholderWrapperClass': 'jq-sexy-placeholder-wrapper',
+          'class': 'placeholder',
+          'css': {},
+          'eventHandler': defaultEventHandler,
+          'wrapInputForPlaceholding': defaultWrapInputForPlacholding,
+          'setPlaceholderWidth': defaultSetPlaceholderWidth
         };
         options = $.extend({}, defaults, options);
 
@@ -62,7 +62,7 @@
           var placeholderText = $input.attr('placeholder');
 
           var $overlay = $('<span class="' + options.sexyPlaceholderClass + '">' + placeholderText + '</span>');
-          $overlay.addClass(options.class)
+          $overlay.addClass(options['class'])
                   .css(options.css);
           options.setPlaceholderWidth($overlay, $input);
           options.wrapInputForPlaceholding($input, options.sexyPlaceholderWrapperClass);
@@ -77,9 +77,9 @@
         return false;
       }
     },
-    sexyPlaceholderDefaults: function(){
+    'sexyPlaceholderDefaults': function(){
       return this.sexyPlaceholder({
-        css: {
+        'css': {
               'position': 'absolute',
               'top': '2px',
               'left': '4px',
