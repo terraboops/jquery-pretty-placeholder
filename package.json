@@ -1,12 +1,22 @@
 {
-  "name": "my-project-name",
+  "name": "jquery-sexy-placeholder",
   "version": "1.0.0",
+  "description": "A sexier placholder shim. Dress it up however you like.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tylermauthe/jquery-sexy-placeholder.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
+    "grunt-saucelabs": "~4.0.2",
+    "grunt-contrib-connect": "~0.1.2",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.0",
     "grunt-contrib-clean": "~0.5.0"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
