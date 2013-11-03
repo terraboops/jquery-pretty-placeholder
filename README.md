@@ -43,3 +43,6 @@ Please feel free to criticize, balk at or otherwise refactor the tests too, beca
 
 ## License
 Same license as jQuery, MIT.
+
+## Thanks
+If you find this useful, please endorse me: [![endorse](https://api.coderwall.com/tylermauthe/endorsecount.png)](https://coderwall.com/tylermauthe).
