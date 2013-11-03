@@ -3,6 +3,9 @@ jquery-sexy-placeholder
 
 A sexier placeholder shim. Dress it up however you like.
 
+[![Build Status](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder.png?branch=master)](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder)
+[![Selenium Test Status](https://saucelabs.com/buildstatus/tylermauthe)](https://saucelabs.com/u/tylermauthe)
+
 ## Support
 This plugin is tested with IE8 and IE9 on Windows 7. Might work with other browsers... If you find that it happens to work for your browser/platform, drop me a line an I'll add it to the list.
 
