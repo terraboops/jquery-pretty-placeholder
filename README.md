@@ -37,7 +37,7 @@ Then style the css class `placeholder`: (taken from [WebKit Default User Agent S
 If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').sexyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline - just let the default method do all the work.
 
 ## Testing
-`jquery-sexy-plugin` uses Jasmine to ensure it stays sexy even after some crazy forking. Please ensure all pull requests for new features have proper tests and that any bug fixes or featre modifications do not fail the existing tests.
+`jquery-sexy-plugin` uses Jasmine to ensure it stays sexy even after some crazy forking. Please ensure all pull requests for new features have proper tests and that any bug fixes or feature modifications do not fail the existing tests.
 
 Please feel free to criticize, balk at or otherwise refactor the tests too, because I'm a testing `n00b`.
 
