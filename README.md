@@ -33,6 +33,18 @@ Then style the css class `placeholder`: (taken from [WebKit Default User Agent S
   }
 ```
 
+You can also pass options into the function call in JSON format:
+```javascript
+$('input').sexyPlaceholder({
+'class': 'placeholder', //Class attribute for styling things
+  'css': {              //jQuery CSS object for inline styles
+          'borderBottom':'10px',
+          'color':'#444'
+          }
+});
+```
+There are some other options that can be set as well, if you're feeling adventurous.
+
 ## Defaults
 If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').sexyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline - just let the default method do all the work.
 
