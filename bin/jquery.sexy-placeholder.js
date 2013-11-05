@@ -11,51 +11,55 @@
 // Author: Tyler Mauthe
 (function($){
 
-  var defaultEventHandler = function(selector, sexyPlaceholderClass) {
-    $('body').delegate(selector, 'keydown keypress keyup change paste', function(){
-      var $this = $(this);
-      var thisPlaceholder = $this.data(sexyPlaceholderClass);
-      
-      if(thisPlaceholder) {
-        if($this.val()!=='') {
-          if(typeof thisPlaceholder.hide === 'function') {
-            thisPlaceholder.hide();
-          }
-        }
-        else {
-          if(typeof thisPlaceholder.show === 'function') {
-            thisPlaceholder.show();
-          }
-        }
-      }
-    });
-  };
-
-  var defaultWrapInputForPlacholding = function($input, sexyPlaceholderWrapperClass){
-    if(!$input.parent().hasClass(sexyPlaceholderWrapperClass)) {
-      $input.wrap('<span class="' + sexyPlaceholderWrapperClass + '" style="display:inline-block; position:relative"></span>');
-    }
-  };
-
-  var defaultSetPlaceholderWidth = function($placeholder, $input) {
-    $placeholder.width($input.width());
-  };
-
-  $.extend($.fn, { 
+  $.extend($.fn, {
     'sexyPlaceholder': function(options){
-      if(!Modernizr.placeholder){      
+      if(!Modernizr.placeholder){
+        
+        //Hide placeholder on user input
+        var defaultUserInputHandler = function(selector) {
+          $('body').delegate(selector, 'keydown keypress keyup change paste', function(){
+            var $this = $(this);
+            var thisPlaceholder = $this.data(options.sexyPlaceholderClass);
+
+            if(thisPlaceholder) {
+              if($this.val()!=='') {
+                if(typeof thisPlaceholder.hide === 'function') {
+                  thisPlaceholder.hide();
+                }
+              }
+              else {
+                if(typeof thisPlaceholder.show === 'function') {
+                  thisPlaceholder.show();
+                }
+              }
+            }
+          });
+        };
+
+        //Make a container for the placeholder and wrap the input
+        var defaultWrapInputForPlacholding = function($input){
+          if(!$input.parent().hasClass(options.sexyPlaceholderWrapperClass)) {
+            $input.wrap('<span class="' + options.sexyPlaceholderWrapperClass + '" style="display:inline-block; position:relative"></span>');
+          }
+        };
+
+        //Set placeholder width based on input width
+        var defaultSetPlaceholderWidth = function($placeholder, $input) {
+          $placeholder.width($input.width());
+        };
+
         var defaults = {
-          'sexyPlaceholderClass': 'jq-sexy-placeholder',
-          'sexyPlaceholderWrapperClass': 'jq-sexy-placeholder-wrapper',
           'class': 'placeholder',
           'css': {},
-          'eventHandler': defaultEventHandler,
+          'userInputHandler': defaultUserInputHandler,
           'wrapInputForPlaceholding': defaultWrapInputForPlacholding,
-          'setPlaceholderWidth': defaultSetPlaceholderWidth
+          'setPlaceholderWidth': defaultSetPlaceholderWidth,
+          'sexyPlaceholderClass': 'jq-sexy-placeholder',
+          'sexyPlaceholderWrapperClass': 'jq-sexy-placeholder-wrapper'
         };
         options = $.extend({}, defaults, options);
 
-        options.eventHandler(this.selector, options.sexyPlaceholderClass);
+        options.userInputHandler(this.selector);
 
         return this.each(function() {
           var $input = $(this);
@@ -65,7 +69,7 @@
           $overlay.addClass(options['class'])
                   .css(options.css);
           options.setPlaceholderWidth($overlay, $input);
-          options.wrapInputForPlaceholding($input, options.sexyPlaceholderWrapperClass);
+          options.wrapInputForPlaceholding($input);
           $input.before($overlay);
           $input.data(options.sexyPlaceholderClass,$overlay);
           $overlay.on('click',function(){
