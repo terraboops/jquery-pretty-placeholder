@@ -12,7 +12,7 @@ This plugin is fully tested with IE8 and IE9 on Windows 7. Might work with other
 ## Opinions
 * Should not alter input values
 * Should create a stylable inline element
-* Should as few defaults as possible, unless you use the defaults method
+* Should use as few defaults as possible, unless you use the defaults method
 * Should be able to override almost anything
 
 ## Usage
