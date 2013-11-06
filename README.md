@@ -10,10 +10,10 @@ A sexier HTML5 placeholder shim. Dress it up however you like.
 This plugin is fully tested with IE8 and IE9 on Windows 7. Might work with other browsers...
 
 ## Opinions
-* Should not alter input values
-* Should create a stylable inline element
+* Should not alter input values, instead overlay a placeholder element
+* Should create a stylable inline element to hold placeholder text
 * Should use as few defaults as possible, unless you use the defaults method
-* Should be able to override almost anything
+* These opinions are meaningless, everything should be able to be overridden
 
 ## Usage
 Say you've got a few input elements:
@@ -24,8 +24,9 @@ Say you've got a few input elements:
 ```
 You can initialize jquery-sexy-placeholder as easily as this: `$('input').sexyPlaceholder()`
 
-Then style the css class `placeholder`: (taken from [WebKit Default User Agent Stylesheet](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css))
+Then style the css class `placeholder`:
 ```css
+  /*Taken from WebKit Default User Agent Stylesheet*/
   .placeholder {
     position: absolute;
     top: 2px;
