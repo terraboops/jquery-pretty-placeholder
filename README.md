@@ -37,7 +37,7 @@ Then style the css class `placeholder`:
   }
 ```
 
-You can also pass options into the function call in JSON format:
+If you hate CSS, love JavaScript too much, or otherwise do not want to alter your CSS, you can also pass options into the function call in JSON format:
 ```javascript
 $('input').sexyPlaceholder({
 'class': 'placeholder', //Class attribute for styling things
@@ -50,15 +50,13 @@ $('input').sexyPlaceholder({
 There are some other options that can be set as well, if you're feeling adventurous take a look at the code.
 
 ## Defaults
-If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').sexyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline - just let the default method do all the work.
+If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').sexyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline via jQuery - just let the default method do all the work.
 
 ## Motivation
 Other placeholder shims exist and they're very nice in their own way, but this plugin is unassuming and totally stylable. While some other plugins utilize an approach that sets the value in the input element to simulate a placeholder, this plugin uses a simple span element for greater stylability and simplicity. `jquery-sexy-placeholder` makes no assumptions, it is totally submissive. If you can't seem to make up your mind about what you want from this plugin, then you lay back, relax, and let the plugin do all the work by using the predefined default method.
 
 ## Testing
-`jquery-sexy-plugin` uses Jasmine to ensure it stays sexy even after some crazy forking. Please ensure all pull requests for new features have proper tests and that any bug fixes or feature modifications do not fail the existing tests.
-
-Please feel free to criticize, balk at or otherwise refactor the tests too, because I'm a testing `n00b`.
+`jquery-sexy-plugin` uses Jasmine to ensure it stays sexy even after some crazy forking. Please, stay safe: wrap your code in tests before committing.
 
 ## License
 Same license as jQuery, MIT.
