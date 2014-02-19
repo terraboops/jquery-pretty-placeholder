@@ -16,7 +16,6 @@ Tested in the following browsers:
 |8  - WinXP|5   - WinXP|          |
 |8  - Win7 |           |          |
 |9  - Win7 |           |          |
-|9  - Win7 |           |          |
 |10 - Win8 |           |          |
 ## Opinions
 * Should not alter input values, instead overlay a placeholder element
