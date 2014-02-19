@@ -7,8 +7,15 @@ A sexier HTML5 placeholder shim. Dress it up however you like.
 [![Selenium Test Status](https://saucelabs.com/buildstatus/sexyplaceholder)](https://saucelabs.com/u/sexyplaceholder)
 
 ## Support
-This plugin is fully tested with IE8 and IE9 on Windows 7. Might work with other browsers...
+Tested in the following browsers:
 
+|    IE    |  Firefox  |  Chrome  |
+|:--------:|:---------:|:--------:|
+|7  - WinXP|3.0 - WinXP|27 - WinXP|
+|8  - WinXP|4 - WinXP  |28 - Linux|
+|8  - Win7 |5 - WinXP  |          |
+|9  - Win7 |           |          |
+|10 - Win8 |           |          |
 ## Opinions
 * Should not alter input values, instead overlay a placeholder element
 * Should create a stylable inline element to hold placeholder text
