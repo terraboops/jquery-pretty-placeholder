@@ -9,14 +9,8 @@ A sexier HTML5 placeholder shim. Dress it up however you like.
 ## Support
 Tested in the following browsers:
 
-|    IE    |  Firefox  |  Chrome  |
-|:--------:|:---------:|:--------:|
-|6  - WinXP|3.0 - WinXP|27 - WinXP|
-|7  - WinXP|4   - WinXP|28 - Linux|
-|8  - WinXP|5   - WinXP|          |
-|8  - Win7 |           |          |
-|9  - Win7 |           |          |
-|10 - Win8 |           |          |
+[![Selenium Test Status](https://saucelabs.com/browser-matrix/sexyplaceholder.svg)](https://saucelabs.com/u/sexyplaceholder)
+
 ## Opinions
 * Should not alter input values, instead overlay a placeholder element
 * Should create a stylable inline element to hold placeholder text
