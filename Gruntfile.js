@@ -6,6 +6,11 @@ module.exports = function (grunt) {
     },
     {
         browserName: "internet explorer",
+        version: "6",
+        platform: "XP"
+    },
+    {
+        browserName: "internet explorer",
         version: "8",
         platform: "WIN7"
     },

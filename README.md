@@ -11,9 +11,11 @@ Tested in the following browsers:
 
 |    IE    |  Firefox  |  Chrome  |
 |:--------:|:---------:|:--------:|
-|7  - WinXP|3.0 - WinXP|27 - WinXP|
-|8  - WinXP|4 - WinXP  |28 - Linux|
-|8  - Win7 |5 - WinXP  |          |
+|6  - WinXP|3.0 - WinXP|27 - WinXP|
+|7  - WinXP|4   - WinXP|28 - Linux|
+|8  - WinXP|5   - WinXP|          |
+|8  - Win7 |           |          |
+|9  - Win7 |           |          |
 |9  - Win7 |           |          |
 |10 - Win8 |           |          |
 ## Opinions
