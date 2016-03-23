@@ -31,11 +31,6 @@ module.exports = function (grunt) {
     },
     {
         browserName: "firefox",
-        version: "3",
-        platform: "XP"
-    },
-    {
-        browserName: "firefox",
         version: "4",
         platform: "XP"
     },
