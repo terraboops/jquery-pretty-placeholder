@@ -1,4 +1,4 @@
-// Sexy Placeholder Shim. Making IE8 sexy since 2013.
+// Prettypretty Placeholder Shim. Making IE8 pretty since 2013.
 // Author: Tyler Mauthe
 (function($){
 
@@ -8,14 +8,14 @@
   });
 
   $.extend($.fn, {
-    'sexyPlaceholder': function(options){
+    'prettyPlaceholder': function(options){
       if(!($.support.inputPlaceholder)){
         
         //Hide placeholder on user input
         var defaultUserInputHandler = function(selector) {
           $('body').delegate(selector, 'keydown keypress keyup change paste', function(){
             var $this = $(this);
-            var thisPlaceholder = $this.data(options.sexyPlaceholderClass);
+            var thisPlaceholder = $this.data(options.prettyPlaceholderClass);
 
             if(thisPlaceholder) {
               if($this.val()!=='') {
@@ -34,8 +34,8 @@
 
         //Make a container for the placeholder and wrap the input
         var defaultWrapInputForPlaceholding = function($input){
-          if(!$input.parent().hasClass(options.sexyPlaceholderWrapperClass)) {
-            $input.wrap('<span class="' + options.sexyPlaceholderWrapperClass + '" style="display:inline-block; position:relative"></span>');
+          if(!$input.parent().hasClass(options.pretty PlaceholderWrapperClass)) {
+            $input.wrap('<span class="' + options.pretty PlaceholderWrapperClass + '" style="display:inline-block; position:relative"></span>');
           }
         };
 
@@ -50,8 +50,8 @@
           'userInputHandler': defaultUserInputHandler,
           'wrapInputForPlaceholding': defaultWrapInputForPlaceholding,
           'setPlaceholderWidth': defaultSetPlaceholderWidth,
-          'sexyPlaceholderClass': 'jq-sexy-placeholder',
-          'sexyPlaceholderWrapperClass': 'jq-sexy-placeholder-wrapper'
+          'pretty PlaceholderClass': 'jq-pretty -placeholder',
+          'pretty PlaceholderWrapperClass': 'jq-pretty -placeholder-wrapper'
         };
         options = $.extend({}, defaults, options);
 
@@ -62,13 +62,13 @@
           var $input = $(this);
           var placeholderText = $input.attr('placeholder');
 
-          var $overlay = $('<span class="' + options.sexyPlaceholderClass + '">' + placeholderText + '</span>');
+          var $overlay = $('<span class="' + options.pretty PlaceholderClass + '">' + placeholderText + '</span>');
           $overlay.addClass(options['class'])
                   .css(options.css);
           options.setPlaceholderWidth($overlay, $input);
           options.wrapInputForPlaceholding($input);
           $input.before($overlay);
-          $input.data(options.sexyPlaceholderClass,$overlay);
+          $input.data(options.pretty PlaceholderClass,$overlay);
           $overlay.on('click',function(){
             $input.focus();
           });
@@ -78,8 +78,8 @@
         return false;
       }
     },
-    'sexyPlaceholderDefaults': function(){
-      return this.sexyPlaceholder({
+    'pretty PlaceholderDefaults': function(){
+      return this.pretty Placeholder({
         'css': {
               'position': 'absolute',
               'top': '2px',

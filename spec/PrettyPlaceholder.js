@@ -9,7 +9,7 @@ $.cssHooks.color = { get: function(elem) { if (elem.currentStyle) var bg = elem.
 /* jshint ignore:end */
 
 var testInputSelector             = "input[type=text]";
-var sexyPlaceholderClassSelector  = ".jq-sexy-placeholder";
+var prettyPlaceholderClassSelector  = ".jq-pretty-placeholder";
 
 jQuery(function() {
   window.numberOfInputs = jQuery(testInputSelector).size();
@@ -23,36 +23,36 @@ jQuery(function() {
     });
 
     afterEach(function(){
-      jQuery(sexyPlaceholderClassSelector).remove();
+      jQuery(prettyPlaceholderClassSelector).remove();
     });
     describe("Placeholder function", function() {
       it("should be available on jQuery selections", function() {
-        expect(jQuery('body').sexyPlaceholder).toBeDefined();
+        expect(jQuery('body').prettyPlaceholder).toBeDefined();
       });
     });
 
     describe("The placeholder shim", function(){
       beforeEach(function(){
-        jQuery(testInputSelector).sexyPlaceholder();
+        jQuery(testInputSelector).prettyPlaceholder();
       });
       if(jQuery.support.inputPlaceholder) {
         it("should do nothing, because you have a good browser", function(){
-          expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(0);
+          expect(jQuery(prettyPlaceholderClassSelector).size()).toBe(0);
         });
       }
       else {
         it("should make you think you have a browser that doesn't suck", function(){
-          expect(jQuery(sexyPlaceholderClassSelector).size()).toBe(numberOfInputs);
+          expect(jQuery(prettyPlaceholderClassSelector).size()).toBe(numberOfInputs);
         });
       }
     });
 
     if(!jQuery.support.inputPlaceholder){
-      describe("Your browser sucks. Sexy Placeholder", function(){
+      describe("Your browser sucks. pretty Placeholder", function(){
 
         it("should be totally unassuming by default",function(){
-          jQuery(testInputSelector).sexyPlaceholder();
-          expect(jQuery(sexyPlaceholderClassSelector).attr('class')).toBe('jq-sexy-placeholder placeholder');
+          jQuery(testInputSelector).prettyPlaceholder();
+          expect(jQuery(prettyPlaceholderClassSelector).attr('class')).toBe('jq-pretty-placeholder placeholder');
         });
 
         it("should have reasonable default method",function(){
@@ -65,22 +65,22 @@ jQuery(function() {
                 'color': '#a9a9a9'
           };
           var cssAttributes = ['position','top','left','fontSize','wordSpacing','color'];
-          jQuery(testInputSelector).sexyPlaceholderDefaults();
-          expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
+          jQuery(testInputSelector).prettyPlaceholderDefaults();
+          expect(jQuery(prettyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
         });
 
         it("should allow reasonable defaults to be overridden",function(){
           var className = 'notPlaceholder';
           var cssDefinition = {'position': 'fixed'};
           var cssAttributes = ['position'];
-          jQuery(testInputSelector).sexyPlaceholder({'class': className, 'css': cssDefinition});
-          expect(jQuery(sexyPlaceholderClassSelector).hasClass(className)).toBe(true);
-          expect(jQuery(sexyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
+          jQuery(testInputSelector).prettyPlaceholder({'class': className, 'css': cssDefinition});
+          expect(jQuery(prettyPlaceholderClassSelector).hasClass(className)).toBe(true);
+          expect(jQuery(prettyPlaceholderClassSelector).css(cssAttributes)).toEqual(cssDefinition);
         });
 
         it("should disappear when input has value", function(){
           jQuery(testInputSelector).trigger('change');
-          expect(jQuery(sexyPlaceholderClassSelector).is(':visible')).toBe(false);
+          expect(jQuery(prettyPlaceholderClassSelector).is(':visible')).toBe(false);
         });
       });
     }
@@ -88,7 +88,7 @@ jQuery(function() {
   // For development / debugging / hax0ring / etc
   // describe("DEBUGGING / DEVELOPMENT", function() {
   //   it("triggers placeholder without cleanup", function() {
-  //     expect(jQuery(testInputSelector).sexyPlaceholder()).toBeDefined();
+  //     expect(jQuery(testInputSelector).prettyPlaceholder()).toBeDefined();
   //   });
   // });
 });

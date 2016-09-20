@@ -56,11 +56,11 @@ module.exports = function (grunt) {
 
     uglify: {
         files: {
-            src: 'src/jquery.sexy-placeholder.js',
+            src: 'src/jquery.pretty-placeholder.js',
             dest: 'bin/',
             expand: true,
             flatten: true,
-            ext: '.sexy-placeholder.min.js'
+            ext: '.pretty-placeholder.min.js'
         }
     },
     'saucelabs-jasmine': {
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                 build: process.env.TRAVIS_JOB_ID,
                 concurrency: 3,
                 browsers: browsers,
-                testname: "jQuery Sexy Placeholder",
+                testname: "jQuery Pretty Placeholder",
                 tags: ["master"]
             }
         }

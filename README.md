@@ -1,15 +1,15 @@
-Sexy HTML5 Placeholder Shim
+Pretty HTML5 Placeholder Shim
 =======================
 
 A sexier HTML5 placeholder shim. Dress it up however you like.
 
-[![Build Status](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder.png?branch=master)](https://travis-ci.org/tylermauthe/jquery-sexy-placeholder)
-[![Selenium Test Status](https://saucelabs.com/buildstatus/sexyplaceholder)](https://saucelabs.com/u/sexyplaceholder)
+[![Build Status](https://travis-ci.org/tylermauthe/jquery-pretty-placeholder.png?branch=master)](https://travis-ci.org/tylermauthe/jquery-pretty-placeholder)
+[![Selenium Test Status](https://saucelabs.com/buildstatus/prettyplaceholder)](https://saucelabs.com/u/prettyplaceholder)
 
 ## Support
 Tested in the following browsers:
 
-[![Selenium Test Status](https://saucelabs.com/browser-matrix/sexyplaceholder.svg)](https://saucelabs.com/u/sexyplaceholder)
+[![Selenium Test Status](https://saucelabs.com/browser-matrix/prettyplaceholder.svg)](https://saucelabs.com/u/prettyplaceholder)
 
 ## Opinions
 * Should not alter input values, instead overlay a placeholder element
@@ -24,7 +24,7 @@ Say you've got a few input elements:
   <input placholder="Password" type="password" />
   ...
 ```
-You can initialize jquery-sexy-placeholder as easily as this: `$('input').sexyPlaceholder()`
+You can initialize jquery-pretty-placeholder as easily as this: `$('input').prettyPlaceholder()`
 
 Then style the css class `placeholder`:
 ```css
@@ -41,7 +41,7 @@ Then style the css class `placeholder`:
 
 If you hate CSS, love JavaScript too much, or otherwise do not want to alter your CSS, you can also pass options into the function call in JSON format:
 ```javascript
-$('input').sexyPlaceholder({
+$('input').prettyPlaceholder({
 'class': 'placeholder', //Class attribute for styling things
   'css': {              //jQuery CSS object for inline styles
           'borderBottom':'10px',
@@ -52,13 +52,13 @@ $('input').sexyPlaceholder({
 There are some other options that can be set as well, if you're feeling adventurous take a look at the code.
 
 ## Defaults
-If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').sexyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline via jQuery - just let the default method do all the work.
+If those CSS values above look correct to you and you don't really give a hoot about the styling, instead use `$('input').prettyPlaceholderDefaults()` and you'll have the same CSS defaults set automatically. No need to add the CSS class to your stylesheet as modifications will happen inline via jQuery - just let the default method do all the work.
 
 ## Motivation
-Other placeholder shims exist and they're very nice in their own way, but this plugin is unassuming and totally stylable. While some other plugins utilize an approach that sets the value in the input element to simulate a placeholder, this plugin uses a simple span element for greater stylability and simplicity. `jquery-sexy-placeholder` makes no assumptions, it is totally submissive. If you can't seem to make up your mind about what you want from this plugin, then you lay back, relax, and let the plugin do all the work by using the predefined default method.
+Other placeholder shims exist and they're very nice in their own way, but this plugin is unassuming and totally stylable. While some other plugins utilize an approach that sets the value in the input element to simulate a placeholder, this plugin uses a simple span element for greater stylability and simplicity. `jquery-pretty-placeholder` makes no assumptions, it is totally submissive. If you can't seem to make up your mind about what you want from this plugin, then you lay back, relax, and let the plugin do all the work by using the predefined default method.
 
 ## Testing
-`jquery-sexy-plugin` uses Jasmine to ensure it stays sexy even after some crazy forking. Please, stay safe: wrap your code in tests before committing.
+`jquery-pretty-plugin` uses Jasmine to ensure it stays pretty even after some crazy forking. Please, stay safe: wrap your code in tests before committing.
 
 ## License
 Same license as jQuery, MIT.

@@ -1,10 +1,10 @@
 {
-  "name": "jquery-sexy-placeholder",
+  "name": "jquery-pretty-placeholder",
   "version": "1.0.1",
   "description": "A sexier placholder shim. Dress it up however you like.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tylermauthe/jquery-sexy-placeholder.git"
+    "url": "git://github.com/tylermauthe/jquery-pretty-placeholder.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
